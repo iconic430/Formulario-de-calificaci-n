@@ -23,7 +23,7 @@ export default function App() {
   }, []);
 
   return (
-    <main className="relative min-h-screen w-full bg-[#0A0A0A] font-sans selection:bg-cyan-500/30 overflow-x-hidden flex flex-col items-center pt-64 pb-20">
+    <main className="relative min-h-screen w-full bg-[#0A0A0A] font-sans selection:bg-cyan-500/30 overflow-y-auto overflow-x-hidden flex flex-col items-center pt-64 pb-20 scroll-smooth">
       {/* Infrastructure Surgical Texture */}
       <div className="noise-overlay absolute inset-0 z-50 pointer-events-none" />
 
@@ -34,20 +34,22 @@ export default function App() {
       {/* Precision Grid Accents */}
       <div className="precision-grid absolute inset-0 z-0 pointer-events-none" />
 
-      {/* Logo Section - Enlarger Logo as requested */}
+      {/* Logo Section - Absolute instead of Fixed to avoid keyboard overlap glitches */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
-        className="fixed top-8 w-full flex flex-col items-center gap-2 z-40"
+        className="absolute top-12 w-full flex flex-col items-center gap-4 z-40"
       >
         <img 
           src="https://i.postimg.cc/PrH1tgfy/IGA-Logo-New.png" 
           alt="Iconic Group" 
-          className="h-16 md:h-24 w-auto object-contain opacity-100"
+          className="h-14 md:h-20 w-auto object-contain opacity-100"
           referrerPolicy="no-referrer"
         />
-        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-cyan-400/80">SOLO PARA CLÍNICAS DENTALES SELECCIONADAS</span>
+        <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-cyan-400/80 text-center px-6">
+          SOLO PARA CLÍNICAS DENTALES SELECCIONADAS
+        </span>
       </motion.div>
 
       {/* Central Content Area - No box, full width optimization for phone */}
