@@ -23,7 +23,7 @@ export default function App() {
   }, []);
 
   return (
-    <main className="relative min-h-screen w-full bg-[#0A0A0A] font-sans selection:bg-cyan-500/30 overflow-x-hidden flex flex-col items-center pt-32 pb-20">
+    <main className="relative min-h-screen w-full bg-[#0A0A0A] font-sans selection:bg-cyan-500/30 overflow-x-hidden flex flex-col items-center pt-64 pb-20">
       {/* Infrastructure Surgical Texture */}
       <div className="noise-overlay absolute inset-0 z-50 pointer-events-none" />
 
