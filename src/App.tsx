@@ -23,78 +23,72 @@ export default function App() {
   }, []);
 
   return (
-    <main className="relative min-h-screen w-full bg-[#0A0A0A] font-sans selection:bg-cyan-500/30 overflow-y-auto overflow-x-hidden flex flex-col items-center pt-64 pb-20 scroll-smooth">
+    <main className="relative h-screen w-full bg-[#0A0A0A] font-sans selection:bg-cyan-500/30 overflow-hidden flex flex-col items-center">
       {/* Infrastructure Surgical Texture */}
       <div className="noise-overlay absolute inset-0 z-50 pointer-events-none" />
 
       {/* Radial Illumination Orbs */}
-      <div className="absolute -top-[10%] -left-[20%] w-[100vw] h-[100vw] bg-cyan-400/[0.1] rounded-full blur-[120px] pointer-events-none z-1" />
-      <div className="absolute bottom-[0%] right-[-10%] w-[80vw] h-[80vw] bg-cyan-400/[0.05] rounded-full blur-[150px] pointer-events-none z-1" />
+      <div className="absolute -top-[5%] -left-[20%] w-[100vw] h-[60vh] bg-cyan-400/[0.08] rounded-full blur-[100px] pointer-events-none z-1" />
+      <div className="absolute -bottom-[5%] -right-[10%] w-[80vw] h-[50vh] bg-cyan-400/[0.05] rounded-full blur-[120px] pointer-events-none z-1" />
       
       {/* Precision Grid Accents */}
       <div className="precision-grid absolute inset-0 z-0 pointer-events-none" />
 
-      {/* Logo Section - Absolute instead of Fixed to avoid keyboard overlap glitches */}
+      {/* Header Section - Compressed for single-screen view */}
       <motion.div 
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
-        className="absolute top-12 w-full flex flex-col items-center gap-4 z-40"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full flex flex-col items-center gap-2 pt-6 pb-2 z-40 bg-gradient-to-b from-[#0A0A0A] to-transparent"
       >
         <img 
           src="https://i.postimg.cc/PrH1tgfy/IGA-Logo-New.png" 
           alt="Iconic Group" 
-          className="h-14 md:h-20 w-auto object-contain opacity-100"
+          className="h-24 md:h-[120px] w-auto object-contain"
           referrerPolicy="no-referrer"
         />
-        <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-cyan-400/80 text-center px-6">
+        <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-cyan-400/80 text-center px-6">
           SOLO PARA CLÍNICAS DENTALES SELECCIONADAS
         </span>
       </motion.div>
 
-      {/* Central Content Area - No box, full width optimization for phone */}
+      {/* Central Content Area - Flexible height to fit screen */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ 
-          duration: 1.2, 
-          delay: 0.2,
-          ease: [0.23, 1, 0.32, 1] 
-        }}
-        className="relative z-10 w-full px-0 flex flex-col items-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="relative z-10 w-full flex-1 flex flex-col items-center justify-center overflow-hidden"
       >
-        {/* Survey Iframe Implementation - Optimized for Mobile Viewport */}
-        <div className="w-full flex items-center justify-center min-h-[600px] bg-transparent">
+        <div className="w-full h-full flex items-center justify-center px-2">
+          {/* Survey Iframe - Using flex-1 and h-full to fit perfectly */}
           <iframe 
             src="https://link.markgrowth.pro/widget/survey/86QwFQtDttKxrTz0yHWh" 
-            style={{ border: 'none', width: '100%', minHeight: '800px' }} 
-            scrolling="no" 
+            style={{ border: 'none', width: '100%', height: '100%' }} 
+            scrolling="yes" 
             id="86QwFQtDttKxrTz0yHWh" 
             title="survey"
           />
         </div>
-        
-        {/* Minimal Micro Detail for Tech Feel */}
-        <div className="mt-8 flex items-center gap-3 opacity-40">
-          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-          <p className="text-[10px] font-medium uppercase tracking-[0.5em] text-zinc-500">
-            System Synchronized • 02.449
-          </p>
-        </div>
       </motion.div>
 
-      {/* Bottom Status Bar - Compact for Mobile */}
+      {/* Micro Detail & Bottom Status - Compressed */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="w-full px-8 mt-12 flex flex-col items-center gap-2 z-20 pointer-events-none"
+        transition={{ delay: 0.8, duration: 1 }}
+        className="w-full flex flex-col items-center gap-1 py-4 z-20 pointer-events-none bg-gradient-to-t from-[#0A0A0A] to-transparent"
       >
-        <div className="h-[1px] w-20 bg-white/10 mb-4" />
-        <div className="text-[8px] uppercase tracking-widest text-zinc-700 text-center">
-          Iconic Group © 2024 / Authorization Required
+        <div className="flex items-center gap-2 opacity-30 mb-1">
+          <div className="w-1 h-1 rounded-full bg-cyan-400 animate-pulse" />
+          <p className="text-[8px] font-medium uppercase tracking-[0.4em] text-zinc-500">
+            System Synchronized • 02.449
+          </p>
         </div>
-        <div className="text-[8px] uppercase tracking-widest text-cyan-400/30">
+        <div className="h-[1px] w-12 bg-white/10 mb-1" />
+        <div className="text-[7px] uppercase tracking-widest text-zinc-700 text-center">
+          Iconic Group © 2026 / Auth Required
+        </div>
+        <div className="text-[7px] uppercase tracking-widest text-cyan-400/20">
           Protocol: 88-X / Latency: 12ms
         </div>
       </motion.div>
