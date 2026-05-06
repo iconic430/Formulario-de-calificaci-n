@@ -50,6 +50,22 @@ export default function App() {
         <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-cyan-400/80 text-center px-6">
           SOLO PARA CLÍNICAS DENTALES SELECCIONADAS
         </span>
+        
+        {/* Scarcity / High-Value Highlight */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6, duration: 1 }}
+          className="mt-3 px-6 py-2 border border-cyan-400/40 rounded-lg bg-cyan-950/20 backdrop-blur-md shadow-[0_0_20px_rgba(34,211,238,0.2)] flex items-center gap-3 relative overflow-hidden"
+        >
+          {/* Animated glow background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/5 to-transparent -translate-x-full animate-[shimmer_3s_infinite]" />
+          
+          <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)] animate-pulse" />
+          <p className="text-[10px] font-black text-white tracking-tight leading-tight text-center max-w-[280px]">
+            SOLO SELECCIONAMOS <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">3 CLÍNICAS POR MES</span> PARA TRABAJAR CON NOSOTROS
+          </p>
+        </motion.div>
       </motion.div>
 
       {/* Central Content Area - Flexible height to fit screen */}
