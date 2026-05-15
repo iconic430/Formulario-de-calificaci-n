@@ -10,7 +10,7 @@ export default function App() {
   useEffect(() => {
     // Dynamically load the survey embed script
     const script = document.createElement("script");
-    script.src = "https://link.markgrowth.pro/js/form_embed.js";
+    script.src = "https://link.msgsndr.com/js/form_embed.js";
     script.async = true;
     document.body.appendChild(script);
 
@@ -83,10 +83,10 @@ export default function App() {
         </div>
         <div className="w-full flex-1 flex items-center justify-center px-2 pb-2">
           <iframe 
-            src="https://link.markgrowth.pro/widget/survey/86QwFQtDttKxrTz0yHWh" 
+            src="https://api.leadconnectorhq.com/widget/survey/LlbaOD9RQoOwafKPg7wM" 
             style={{ border: 'none', width: '100%', height: '100%' }} 
-            scrolling="yes" 
-            id="86QwFQtDttKxrTz0yHWh" 
+            scrolling="no" 
+            id="LlbaOD9RQoOwafKPg7wM" 
             title="survey"
           />
         </div>
